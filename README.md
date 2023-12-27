@@ -25,16 +25,21 @@
 
 - Used VSCod Plugins:
   - ESLint: Integrates ESLint into VS Code. The extension uses the ESLint library installed in the opened workspace folder. If the folder doesn't provide one the extension looks for a global install version. If you haven't installed ESLint either locally or globally, do so by running npm init @eslint/config (this will install eslint locally and let you configure the installation.)
-  Setting the following rule on **settings.json** will automatically fix the fixable ESLint errors when you save(ctrl+s) the file:
+  Setting the following rule on **settings.json** will automatically fix the fixable ESLint errors on `.js` files when you save(ctrl+s) the file:
   ```json
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true
   },
   ```
   - Prettier-Code Formatter: Integrates Prettier into VS Code. This extension will use prettier from your project's local dependencies.
-  Setting the following rule on **settings.json** will automatically format the file when you save(ctrl+s):
+  Setting the following rule on **settings.json** will automatically format the `.js` and `.css` files when you save(ctrl+s):
   ```json
   "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  }
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.formatOnSave": true
   }
   ```
