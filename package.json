@@ -16,6 +16,9 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@babel/core": "",
+    "@babel/preset-env": "",
+    "babel-loader": "",
     "css-loader": "",
     "eslint": "",
     "eslint-config-airbnb-base": "",

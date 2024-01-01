@@ -22,6 +22,7 @@
   - eslint-plugin-import: Focuses on linting and enforcing best practices related to import statements in JavaScript.
   - webpack-dev-server: Serve webpack bundles during the development process. Supports live reloading.
   - webpack-merge: Install the function that lets you merge multiple webpack config files (common/dev/prod).
+  - @babel/core, @babel/preset-env, babel-loader: Dependencies for Babel. babel-loader handles the transpilation of .js files when transpiling for production.
 
 - Used VSCod Plugins:
   - ESLint: Integrates ESLint into VS Code. The extension uses the ESLint library installed in the opened workspace folder. If the folder doesn't provide one the extension looks for a global install version. If you haven't installed ESLint either locally or globally, do so by running npm init @eslint/config (this will install eslint locally and let you configure the installation.)
