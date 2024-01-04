@@ -44,6 +44,7 @@
     "editor.formatOnSave": true
   }
   ```
+  - Atom One Dark Theme (font: Fira Mono Medium)
   - Material Icon Theme
   - Live Server
 
