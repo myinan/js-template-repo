@@ -11,7 +11,8 @@
     "lint": "npx eslint src/*.js src/**/*.js",
     "lint:fix": "npm run lint -- --fix",
     "format": "npx prettier --write src/*.js src/**/*.js",
-    "git:undo": "git stash -u && git stash drop"
+    "git:undo": "git stash -u && git stash drop",
+    "git:log": "git log --oneline --abbrev-commit --all --graph --decorate --color"
   },
   "author": "",
   "license": "ISC",
