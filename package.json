@@ -29,6 +29,7 @@
     "eslint-plugin-import": "",
     "html-webpack-plugin": "",
     "jest": "",
+    "identity-obj-proxy": "",
     "prettier": "",
     "style-loader": "",
     "webpack": "",

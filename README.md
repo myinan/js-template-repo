@@ -11,8 +11,32 @@
   - `webpack.common/dev/prod.js`: Config files for webpack.
   - `.eslintrc.json`: Config file for ESLint. Extends eslint-config-airbnb-base. Extends eslint-config-prettier to disable conflicting rules with Prettier.
   - `.prettierrc.json`: Empty config file to let editors and other tools know you are using Prettier.
-  - `jest.config.js`: Config file for jest.
-  - `babel.config.js`: Config file for babel.
+  - `.babelrc`: Using ES6 import/export statements with Jest requires some configuration to ensure that Jest can  handle the ES6 syntax. First, make sure `babel-jest` and `@babel/preset-env` dependencies are installed. `.babelrc` will contain Babel configuration options (`"presets": ["@babel/preset-env"]`).
+  - `jest.config.js`: This is the configuration file for Jest.
+Here's an explanation of the non-commented configuration options in your `jest.config.js` file:
+
+    1. **clearMocks**: When set to `true`, Jest will clear all mocks between every test. This ensures that mocks from one test do not affect others.
+
+    2. **collectCoverage**: When set to `true`, Jest will collect code coverage information during the test run.
+
+    3. **coverageDirectory**: Specifies the directory where Jest should store its coverage files.
+
+    4. **moduleNameMapper**: A map from regular expressions to module names or arrays of module names that allow stubbing out resources with a single module. In this case, it is used to handle CSS files and other static assets.
+        ```js
+          "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$":
+          "<rootDir>/src/tests/__mocks__/fileMock.js",
+          "\\.(css|less|scss|sass)$": "identity-obj-proxy",
+
+          // fileMock.js is used to mock imported static files.
+          // identitiy-obj-proxy: An identity object using ES6 proxies. Used for mocking .css imports.
+        ```
+
+    5. **testRegex**: A regular expression that Jest uses to detect test files. The provided regex (`(/__tests__/.*|(\\.|/)(test|spec))\\.js$`) matches files in the `__tests__` directory and files ending with `.test.js` or `.spec.js`.
+
+    6. **transform**: An object specifying the transformation module for different file types. In this case, it uses Babel (`babel-jest`) to transform JavaScript files.
+
+    7. **transformIgnorePatterns**: An array of regular expression patterns that are matched against all source file paths. Files matching these patterns will be skipped during the transformation process.
+
   - `.gitignore`: Set files for Git to ignore.
   - `.prettierignore`: Set files for Prettier to ignore.
   - `.vscodeignore`: This is the file i keep my WSL2 installation guide and custom `settings.json` file for the remote Ubuntu enviroment.
@@ -54,15 +78,17 @@
 
   1. **`babel-jest`**: Required dependency to use babel alongside jest.
 
+  1. **`identity-obj-proxy`**: An identity object using ES6 proxies. Used for mocking .css imports with Jest.
+
 - ### Used VSCod Plugins:
-  - ESLint: Integrates ESLint into VS Code. The extension uses the ESLint library installed in the opened workspace folder. If the folder doesn't provide one the extension looks for a global install version. If you haven't installed ESLint either locally or globally, do so by running npm init @eslint/config (this will install eslint locally and let you configure the installation.)
+  - **ESLint**: Integrates ESLint into VS Code. The extension uses the ESLint library installed in the opened workspace folder. If the folder doesn't provide one the extension looks for a global install version. If you haven't installed ESLint either locally or globally, do so by running npm init @eslint/config (this will install eslint locally and let you configure the installation.)
   Setting the following rule on **settings.json** will automatically fix the fixable ESLint errors on `.js` files when you save(ctrl+s) the file:
   ```json
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true
   },
   ```
-  - Prettier-Code Formatter: Integrates Prettier into VS Code. This extension will use prettier from your project's local dependencies.
+  - **Prettier-Code Formatter**: Integrates Prettier into VS Code. This extension will use prettier from your project's local dependencies.
   Setting the following rule on **settings.json** will automatically format the `.js` and `.css` files when you save(ctrl+s):
   ```json
   "[javascript]": {
@@ -74,8 +100,7 @@
     "editor.formatOnSave": true
   }
   ```
-  - Atom One Dark Theme (font: Fira Mono Medium)
-  - Material Icon Theme
-  - Live Server
-  - WSL (Windows Subsystem for Linux) extension
-
+  - **Atom One Dark Theme (font: Fira Mono Medium)**
+  - **Material Icon Theme**
+  - **Live Server**
+  - **WSL (Windows Subsystem for Linux) extension**
