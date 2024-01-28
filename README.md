@@ -11,6 +11,7 @@
   - `webpack.common/dev/prod.js`: Config files for webpack.
   - `.eslintrc.json`: Config file for ESLint. Extends eslint-config-airbnb-base. Extends eslint-config-prettier to disable conflicting rules with Prettier.
   - `.prettierrc.json`: Empty config file to let editors and other tools know you are using Prettier.
+  - `jest.config.js`: Config file for jest.
   - `.gitignore`: Set files for Git to ignore.
   - `.prettierignore`: Set files for Prettier to ignore.
   - `.vscodeignore`: This is the file i keep my WSL2 installation guide and custom `settings.json` file for the remote Ubuntu enviroment.
@@ -46,6 +47,10 @@
 
   15. **`webpack-merge`**: This utility allows you to merge webpack configuration objects. It's often used to keep the webpack configuration DRY (Don't Repeat Yourself) by splitting it into multiple files and merging them as needed.
 
+  16. **`jest`**: Jest is a popular JavaScript testing framework developed by Facebook. It is widely used for testing JavaScript code, particularly for React applications. Jest is designed to be easy to set up and use, providing a robust set of features for testing, mocking, and code coverage.
+
+  17. **`babel-jest`**: Required dependency to use babel alongside jest.
+
 - ### Used VSCod Plugins:
   - ESLint: Integrates ESLint into VS Code. The extension uses the ESLint library installed in the opened workspace folder. If the folder doesn't provide one the extension looks for a global install version. If you haven't installed ESLint either locally or globally, do so by running npm init @eslint/config (this will install eslint locally and let you configure the installation.)
   Setting the following rule on **settings.json** will automatically fix the fixable ESLint errors on `.js` files when you save(ctrl+s) the file:
@@ -69,4 +74,5 @@
   - Atom One Dark Theme (font: Fira Mono Medium)
   - Material Icon Theme
   - Live Server
+  - WSL (Windows Subsystem for Linux) extension
 
