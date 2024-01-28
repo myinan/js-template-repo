@@ -25,6 +25,7 @@
     "eslint": "",
     "eslint-config-airbnb-base": "",
     "eslint-config-prettier": "",
+    "eslint-plugin-jest": "",
     "eslint-plugin-import": "",
     "html-webpack-plugin": "",
     "jest": "",

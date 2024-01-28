@@ -10,5 +10,14 @@
   },
   "rules": {
     "no-console": "off"
-  }
+  },
+  "overrides": [
+    {
+      "files": [".src/tests/**/*"],
+      "plugins": ["jest"],
+      "env": {
+        "jest/globals": true
+      }
+    }
+  ]
 }
