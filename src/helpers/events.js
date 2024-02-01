@@ -1,4 +1,4 @@
-//events - a basic (publish subscribe) pattern
+// events - a basic (publish subscribe) pattern
 
 export const events = {
   events: {},
